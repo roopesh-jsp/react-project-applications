@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 /* div {
   background-color: antiquewhite;
@@ -70,7 +71,7 @@ button:hover {
   position: relative;
   height: 500px;
   width: 400px;
-  margin: 100px auto;
+  margin: 40px auto;
   border-radius: 10px;
   box-shadow: 1px 1px 10px 0px;
   background-color: aqua;
@@ -126,4 +127,10 @@ button:hover {
   left: 50%;
   translate: -50%;
   margin-bottom: 10px;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin: 100px 0 0 0;
+  color: orangered;
 }

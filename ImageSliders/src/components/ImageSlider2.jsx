@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function ImageSlider({ imgArray }) {
+export default function ImageSlider2({ imgArray }) {
   const [imgIndex, setImgIndex] = useState(0);
   function prevImg() {
     setImgIndex((prev) => {
@@ -34,14 +34,6 @@ export default function ImageSlider({ imgArray }) {
         <button onClick={nxtImg} style={{ right: 0 }}>
           +
         </button>
-        <div className="dots">
-          {imgArray.map((_, idx) => (
-            <div
-              className={imgIndex === idx ? "filldot" : "dot"}
-              onClick={() => goToImg(idx)}
-            ></div>
-          ))}
-        </div>
       </div>
     </>
   );
