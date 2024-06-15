@@ -1,0 +1,66 @@
+.stepper {
+  margin: 50px auto;
+  width: 700px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  /* overflow: hidden; */
+}
+h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.step-number {
+  height: 40px;
+  width: 40px;
+  background-color: #c1bebe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  z-index: 10;
+}
+button {
+  position: relative;
+  left: 50%;
+  translate: -50%;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+.step-active {
+  background-color: rgb(92, 92, 198);
+  color: aliceblue;
+}
+.step-completed {
+  background-color: rgb(38, 152, 67);
+  color: aliceblue;
+}
+.progress-bar {
+  width: 602px;
+  height: 7px;
+  background-color: #c7c7c7;
+  position: absolute;
+  top: 17px;
+  margin-left: 58.5px;
+  margin-right: 39.5px;
+}
+.progress {
+  height: 100%;
+  max-width: 100%;
+  background-color: green;
+  position: relative;
+  transition: all 0.5s ease-in;
+}

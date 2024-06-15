@@ -1,0 +1,6 @@
+useEffect(() => {
+  const timer = setInterval(() => {
+    setValue((val) => val + 1);
+  }, 100);
+  return () => clearInterval(timer);
+}, []);
