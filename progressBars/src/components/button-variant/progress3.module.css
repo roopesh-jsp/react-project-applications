@@ -1,0 +1,25 @@
+.main {
+  width: 60%;
+  margin: auto;
+}
+.progressBar {
+  background-color: rgb(233, 233, 233);
+  height: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 100px auto;
+  overflow: hidden;
+}
+.progress {
+  /* position: absolute; */
+  background-color: rgb(50, 249, 93);
+  height: 100%;
+}
+.controls {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.controls button {
+  width: 100px;
+}
