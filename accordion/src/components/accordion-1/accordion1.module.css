@@ -1,0 +1,58 @@
+.wrapper {
+  margin: 10px auto;
+  width: 400px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: rgb(55, 47, 38);
+}
+.title h1 {
+  font-size: 20px;
+}
+.title span {
+  font-size: 30px;
+  position: relative;
+  bottom: 5px;
+  cursor: pointer;
+  transition: rotate 300ms ease-in;
+}
+.title span.active {
+  rotate: 45deg;
+}
+.accordion {
+  background-color: rgb(211, 154, 94);
+  margin: 5px 0;
+  overflow: hidden;
+  /* padding: 10px; */
+}
+.answer {
+  /* padding: 20px; */
+  color: black;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease-in;
+  max-height: 200px;
+}
+.answer p {
+  overflow: hidden;
+  padding: 0 20px;
+}
+.answer.active {
+  grid-template-rows: 1fr;
+}
+.answer.active p {
+  overflow: auto;
+}
+.answer.active p::-webkit-scrollbar {
+  width: 10px;
+}
+.answer.active p::-webkit-scrollbar-thumb {
+  background-color: rgb(67, 67, 67);
+}
+.answer.active p::-webkit-scrollbar-track {
+  background-color: rgb(123, 123, 123);
+}
