@@ -14,13 +14,10 @@ export default function Accordion1({ data }) {
       <div className={classes.wrapper}>
         {data.map((item, idx) => (
           <div key={idx} className={classes.accordion}>
-            <div className={classes.title}>
+            <div className={classes.title} onClick={() => handleClick(idx + 1)}>
               <h1>{item.title}</h1>
-              <span
-                onClick={() => handleClick(idx + 1)}
-                className={isActive === idx + 1 ? `${classes.active}` : ""}
-              >
-                +
+              <span className={isActive === idx + 1 ? `${classes.active}` : ""}>
+                 +
               </span>
             </div>
             <div

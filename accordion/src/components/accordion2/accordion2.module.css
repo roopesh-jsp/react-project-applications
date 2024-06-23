@@ -1,0 +1,43 @@
+.accordion {
+  width: 40%;
+  margin: 100px auto;
+}
+.accordion {
+  list-style-type: none;
+}
+.accordionItem {
+  background-color: rgb(211, 101, 37);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.accordion .h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.h1 span {
+  font-weight: 500;
+  transition: rotate 300ms ease;
+}
+
+.accordtion_content {
+  /* color: azure;
+  margin-top: 20px;
+  display: none; */
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease-in;
+}
+.accordtion_content article {
+  overflow: hidden;
+}
+.rotate {
+  rotate: 45deg;
+}
+.open {
+  grid-template-rows: 1fr;
+  /* display: block; */
+}
