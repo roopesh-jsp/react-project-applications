@@ -9,6 +9,7 @@ body {
   margin-left: 100px;
 }
 aside {
+  z-index: 100;
   margin-left: -100px;
   position: fixed;
   padding: 30px 0;
@@ -21,12 +22,14 @@ aside {
 aside.shrink .text {
   display: none;
 }
-.backdrop {
+/* .backdrop {
+  position: fixed;
+
   width: 100vw;
   height: 100vh;
   position: absolute;
   backdrop-filter: blur(3px);
-}
+} */
 .sidebar_nav {
   display: flex;
   flex-direction: column;
@@ -68,4 +71,24 @@ aside.shrink .text {
 }
 span {
   font-weight: 300;
+}
+li {
+  position: relative;
+}
+.tooltip {
+  position: absolute;
+  top: 30px;
+  left: 65px;
+  background-color: #222;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: rgb(239, 255, 255);
+  font-weight: 500;
+  display: none;
+}
+aside.shrink li:hover .tooltip {
+  display: block;
+}
+div.blur {
+  background-color: rgba(0, 0, 0, 0.5);
 }

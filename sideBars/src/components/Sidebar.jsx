@@ -14,13 +14,14 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosMailOpen } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { PiHamburger } from "react-icons/pi";
+import { Si99Designs } from "react-icons/si";
+import SidebarItem from "./SidebarItem";
 
-export default function Sidebar() {
-  const [isExpanded, setIsExpanded] = useState(false);
+export default function Sidebar({ isExpanded, setIsExpanded }) {
   if (isExpanded) {
-    document.getElementById("p").style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   } else {
-    document.getElementById("p").style.overflow = "unset";
+    document.body.style.overflow = "unset";
   }
   return (
     <div className={isExpanded ? "backdrop" : ""}>
@@ -38,62 +39,20 @@ export default function Sidebar() {
         </div>
         <nav>
           <ul className="sidebar_nav">
-            <li>
-              <a href="#">
-                <FaHome />
-                <div className="text">
-                  {" "}
-                  <p>Home </p>{" "}
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <FaMessage />
-                <div className="text">
-                  <p>message </p>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
-                <FaMap />
-                <div className="text">
-                  <p>Explore </p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <FaUser />
-                <div className="text">
-                  <p>USer </p>
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
-                <FaPhone />
-                <div className="text">
-                  <p>contact </p>
-                </div>
-              </a>
-            </li>
+            <SidebarItem Icon={FaHome} text={"home"} />
+            <SidebarItem Icon={FaMessage} text={"message"} />
+            <SidebarItem Icon={FaMap} text={"explore"} />
+            <SidebarItem Icon={FaUser} text={"profile"} />
+            <SidebarItem Icon={FaPhone} text={"Phone"} />
           </ul>
         </nav>
         <div className="user_details">
           <ul className="sidebar_nav">
-            <li>
-              <a href="#">
-                <MdEmail />
-                <div className="text mail">
-                  <p>rupxkumar5@gmail.com</p>
-                  <span>new user</span>
-                </div>
-              </a>
-            </li>
+            <SidebarItem
+              Icon={MdEmail}
+              text={"rupzKumar5@gamil.com"}
+              span={"new user"}
+            />
           </ul>
         </div>
       </aside>

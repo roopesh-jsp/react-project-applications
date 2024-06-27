@@ -1,10 +1,12 @@
 import Sidebar from "./components/Sidebar";
+import { useState } from "react";
 
 function App() {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <>
-      <Sidebar />
-      <p id="p">
+      <Sidebar isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
+      <div className={isExpanded ? "blur" : ""}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia ipsum,
         dolores inventore reiciendis vero doloremque tenetur a assumenda soluta
         voluptate molestias numquam obcaecati minus corporis dignissimos sequi
@@ -337,7 +339,7 @@ function App() {
         eius facere quis voluptatum facilis quas maiores, excepturi consectetur
         quod. Aut fugit impedit non delectus fugiat tempore, sint asperiores
         ipsam iure, natus quaerat dicta?
-      </p>
+      </div>
     </>
   );
 }
