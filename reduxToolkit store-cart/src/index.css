@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  background-color: rgb(215, 196, 234);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgb(205, 231, 255);
+}
+.Loading {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 30px;
+  font-weight: 500;
+}
+#products {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  max-width: 1000px;
+  margin: 50px auto;
+  gap: 10px;
+}
+.product {
+  width: 200px;
+  border: 3px solid rgb(32, 32, 32);
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0.45rem;
+  cursor: pointer;
+  align-items: center;
+  height: 300px;
+}
+.product button {
+  width: 70%;
+  height: 35px;
+  background-color: rgb(169, 169, 218);
+  color: rgb(28, 28, 28);
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+}
+header button {
+  width: 70px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  background-color: rgb(222, 179, 220);
+  border-radius: 10px;
+  height: 30px;
+}
+.product img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+.product h5 {
+  /*background-color: rgb(125, 79, 18); */
+  width: 80%;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: "";
+}
+.cart {
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+dialog {
+  margin: auto;
+  min-height: 200px;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 10px;
+}
+dialog form {
+  width: 100%;
+}
+dialog form button {
+  margin: 20px;
+  width: 50px;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  height: 30px;
+  background-color: rgb(214, 162, 219);
+  padding: 0.25rem;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.cartItem {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.cta {
+  width: 20%;
+}
+.cartItem .title {
+  width: 40%;
+  /* text-wrap: nowrap;
+  overflow: hidden; */
+}
+.cta button {
+  width: 30px;
+  margin: 0 10px;
+}
