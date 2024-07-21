@@ -6,6 +6,7 @@ export default function App() {
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [navigationIdx, setNavigationIdx] = useState(-1);
   const inputRef = useRef(null);
+  const timerRef = useRef(() => {});
   function fetchSearchResults() {
     if (searchTerm.length > 0) {
       fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
@@ -16,12 +17,18 @@ export default function App() {
   }
 
   useEffect(() => {
-    fetchSearchResults();
     if (searchTerm.trim() === "") {
       setSuggestions([]);
+    } else {
+      timerRef.current = setTimeout(() => {
+        // console.log(searchTerm);
+        fetchSearchResults();
+      }, 500);
     }
     setNavigationIdx(-1);
-    // console.log(suggestions);
+    return () => {
+      clearTimeout(timerRef.current);
+    };
   }, [searchTerm]);
 
   function handleSelecting(user) {
@@ -51,7 +58,7 @@ export default function App() {
     }
     if (suggestions.length > 0 && e.key === "ArrowUp") {
       if (navigationIdx === -1) {
-        // setNavigationIdx(suggestions.length-1);
+        setNavigationIdx(suggestions.length - 1);
         return;
       }
       setNavigationIdx((prev) => prev - 1);
