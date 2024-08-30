@@ -16,7 +16,7 @@ const App = memo(() => {
 
   return (
     <div className="main">
-      <h1>toaster component</h1>
+      <h1 className="heading">toaster component</h1>
       <div className="btn">
         <Button
           onClick={handleClick}

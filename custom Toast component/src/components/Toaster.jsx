@@ -13,7 +13,6 @@ export default function Toaster({ toasts, setToast }) {
   useEffect(() => {
     const interval = setInterval(() => {
       if (toasts.length) {
-        // console.log(toasts[0]);
         removeToast(toasts[0].id);
         // handleToast();
       }

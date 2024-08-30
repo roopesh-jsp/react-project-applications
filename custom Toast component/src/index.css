@@ -4,11 +4,12 @@
   box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
 }
 .main {
   margin: 100px auto;
 }
-h1 {
+.heading {
   font-size: 25px;
   text-transform: uppercase;
   text-align: center;
@@ -27,4 +28,54 @@ button {
 
 span {
   cursor: pointer;
+}
+
+.toaster {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  width: 250px;
+  /* background-color: rgb(238, 108, 98); */
+}
+
+.toast {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 10px 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transform: translateX(100%);
+  animation: moveleft 0.2s linear forwards;
+}
+@keyframes moveleft {
+  100% {
+    transform: translateX(0%);
+  }
+}
+.toast span {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 3px 7px;
+  transition: all 200ms ease-in;
+}
+.toast span:hover {
+  background-color: #222;
+  color: aliceblue;
+}
+.toast h1 {
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 3px;
+  font-size: 16px;
+}
+.toast p {
+  text-align: center;
+  font-size: 14px;
+  text-transform: capitalize;
 }
