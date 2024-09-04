@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-function RooyFolder({ data }) {
+function RooyFolder({ data, addItem }) {
   const [expand, setExpand] = useState(false);
+  const [inputval, setInputval] = useState("");
   const [addFolder, setAddFolder] = useState({
     isFolder: false,
     isVisible: false,
@@ -11,38 +12,64 @@ function RooyFolder({ data }) {
   }
   function addFiles(e, type) {
     e.stopPropagation();
+    setExpand(true);
     setAddFolder((prev) => {
       return { isFolder: type === "folder", isVisible: true };
     });
   }
+  function onAddFile(e) {
+    if (e.target.value && e.keyCode === 13) {
+      // logic ...
+      addItem(data.id, addFolder.isFolder, inputval);
+      setAddFolder({ ...addFolder, isVisible: false });
+      setInputval("");
+    }
+  }
+
   return (
     <div className="rootFolder">
-      {console.log(data)}
       <div className="name" onClick={handleClick}>
         <span>
           {" "}
           {data.isFolder ? "📂" : "🗃️"}
           {data.name}
         </span>
-        <span className="cta">
-          {" "}
-          <button onClick={(e) => addFiles(e, "folder")}>folder +</button>
-          <button onClick={(e) => addFiles(e, "file")}>file +</button>
-        </span>
+        {data.isFolder && (
+          <span className="cta">
+            {" "}
+            <button onClick={(e) => addFiles(e, "folder")}>folder +</button>
+            <button onClick={(e) => addFiles(e, "file")}>file +</button>
+          </span>
+        )}
       </div>
-      {addFolder.isVisible && (
-        <div className="addFolder">
-          <span>{addFolder.isFolder ? "📂" : "🗃️"}</span>
-          <input type="text" />
-        </div>
-      )}
-      {expand && (
-        <div className="inner_items">
-          {data.items.map((item, idx) => (
-            <RooyFolder key={item.id} data={item} />
-          ))}
-        </div>
-      )}
+
+      <div
+        className="inner_items"
+        style={{
+          display: expand ? "block" : "none",
+        }}
+      >
+        {addFolder.isVisible && (
+          <div className="addFolder">
+            <span>{addFolder.isFolder ? "📂" : "🗃️"}</span>
+            <input
+              type="text"
+              autoFocus
+              onBlur={() => {
+                setAddFolder({ ...addFolder, isVisible: false });
+              }}
+              onKeyDown={onAddFile}
+              value={inputval}
+              onChange={(e) => {
+                setInputval(e.target.value);
+              }}
+            />
+          </div>
+        )}
+        {data.items.map((item, idx) => (
+          <RooyFolder key={item.id} data={item} addItem={addItem} />
+        ))}
+      </div>
     </div>
   );
 }
