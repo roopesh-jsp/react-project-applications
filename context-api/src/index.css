@@ -1,0 +1,12 @@
+div {
+  margin: 200px auto;
+  width: fit-content;
+  /* background-color: aqua; */
+}
+
+span {
+  margin: 20px 40px;
+  background-color: antiquewhite;
+  padding: 20px;
+  cursor: pointer;
+}

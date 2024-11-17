@@ -6,7 +6,7 @@ const Modal = forwardRef(function Modal({ children }, ref) {
     <dialog ref={ref}>
       {children}
       <form method="dialog">
-        <button>close</button>
+        <button >close</button>
       </form>
     </dialog>,
     document.getElementById("modal")
