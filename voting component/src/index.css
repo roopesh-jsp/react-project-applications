@@ -31,6 +31,7 @@
   justify-content: start;
   text-transform: capitalize;
   gap: 20px;
+  position: relative;
 }
 .check {
   width: 20px;
@@ -47,4 +48,31 @@
   background-color: rgb(70, 132, 176);
   border: 2px solid black;
   scale: 0.9;
+}
+.progress_bar {
+  /* position: absolute; */
+  background-color: #fff;
+  height: 10px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.progress {
+  background-color: rgb(123, 177, 221);
+  height: 100%;
+  border-radius: inherit;
+}
+
+.percentage {
+  font-size: 14px;
+  position: absolute;
+  right: 10px;
+}
+.box {
+  padding: 0 10px;
+}
+.outline {
+  border: 2px solid rgb(114, 114, 200);
+  border-radius: 20px;
 }

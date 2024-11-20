@@ -3,15 +3,15 @@ export const contest_1 = {
   options: [
     {
       opt: "pawan kalyan",
-      votes: 5,
+      votes: 50,
     },
     {
       opt: "allu arjun",
-      votes: 3,
+      votes: 30,
     },
     {
       opt: "ram charan",
-      votes: 1,
+      votes: 20,
     },
   ],
 };
