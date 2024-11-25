@@ -1,0 +1,16 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.card {
+  background-color: antiquewhite;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.loading {
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: capitalize;
+}
