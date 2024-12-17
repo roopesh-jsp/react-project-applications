@@ -90,6 +90,8 @@ export default function App() {
 
   let score: number | string = 100;
   score = "won";
+  console.log(score);
+
   // person : user| admin  aa user can be changed to admin in future ->here admin and user are types
 
   function sample(id: number | string) {
@@ -114,5 +116,57 @@ export default function App() {
   let rgb: [number, number, number];
   rgb = [0, 0, 255];
 
+  //interfaces   --> same as types
+  interface UserIF {
+    readonly id: number;
+    name: string;
+    age: number;
+  }
+  interface UserIF {
+    emial: string; //reopening of interface
+    weCanHaveMethods?(): string; //optional symobol give string was return tpype
+  }
+
+  const IfUser: UserIF = {
+    id: 1,
+    name: "roope",
+    age: 100,
+    emial: "dd",
+  };
+  console.log(IfUser);
+
+  //classes
+  class UserC {
+    name: string; //all variables should be given before constructor only ....
+    age: number;
+    email?: string;
+    private xyz: string = ""; //cannot acces outside class
+
+    private _cnt = 1;
+    constructor(x: string, y: number) {
+      this.name = x;
+      this.age = y;
+      console.log(this.xyz);
+    }
+
+    get cntval(): number {
+      return this._cnt;
+    }
+
+    set cntval(num: number) {
+      //setters cannot have return type even void aslo, it must left like this
+      this._cnt = this._cnt + num;
+    }
+  }
+
+  const userobj = new UserC("roop", 100);
+  console.log(userobj.cntval);
+
+  //generics
+
+  function adding<T>(x: T): T {
+    return x;
+  }
+  adding<number>(10);
   return <div>App</div>;
 }
